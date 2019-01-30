@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="container text-center">
+        <form method="POST">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 font-weight-normal">Welcome to GitHubIssueSearch</h1>
+            <p> For a given repository, this app will show:
+                <li>Number of open-issues</li>
+                <li>Number of open issues that were opened in the last 24 hours</li>
+                <li>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</li>
+                <li>Number of open issues that were opened more than 7 days ago </li>
+            </p>
+            {{form.url}}
+            <br>
+            <button class="btn btn-lg btn-dark btn-block" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

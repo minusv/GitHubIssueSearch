@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<div class="container-fluid">
+    <div class="container text-center">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                <th>Total Open Issues</th>
+                <th>Issues: "Opened" <= 24Hrs</th>
+                <th>Issues: 24Hrs < "Opened" < 7Days </th>
+                <th>Issues: 7Days <= "Opened"</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>{{totalOpenIssues}}</td>
+                <td>{{openedInLast24Hours}}</td>
+                <td>{{openedBetween24HoursAnd7Days}}</td>
+                <td>{{openedBefore7days}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a href="/" class="text-dark">Back</a>
+    </div>
+</div>
+{% endblock %}
